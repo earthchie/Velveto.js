@@ -1,0 +1,1 @@
+console.log("Page1's script - executed.");
