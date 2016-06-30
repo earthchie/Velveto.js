@@ -20,6 +20,11 @@ Velveto.init({
 - rename ``Velveto.goTo()`` to ``Velveto.go()``. (still support ``Velveto.goTo()``)
 - Linted
 
+# Plan
+- add **simple** template engine to help you bind variable to html strings
+
+send me your idea! earthchie@gmail.com
+
 # How to use?
 
 # Functions
