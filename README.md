@@ -11,7 +11,7 @@ Velveto.init({
     loading_indicator: 'Loading...' // html that injected while page is loading.
 });
 ```
-- add ``javascript Velveto.import()``
+- add ``Velveto.importDocument()``
 - add ``Velveto.data()``
 - ``Velveto.session`` is now try to store value in variable if localStorage is not presence
 - fix history bug, now browser's back button is working!
@@ -24,21 +24,33 @@ Velveto.init({
 
 # Functions
 
-## Velveto.init()
-## Velveto.fireEvent()
-## Velveto.back()
-## Velveto.clearHistory()
-## Velveto.getBaseURL()
-## Velveto.getPath()
-## Velveto.getPathData()
-## Velveto.data()
-## Velveto.go()
-## Velveto.goTo()
-## Velveto.history()
-## Velveto.isBackable()
-## Velveto.()refresh
-## Velveto.()
-## Velveto.()
-## Velveto.()
-## Velveto.()
-## Velveto.()## Velveto.()
+### Velveto.back()
+### Velveto.clearHistory()
+### Velveto.data()
+### Velveto.extend()
+### Velveto.fireEvent()
+### Velveto.getBaseURL()
+### Velveto.getPath()
+### Velveto.getPathData()
+### Velveto.go()
+### Velveto.goTo()
+### Velveto.history()
+### Velveto.importDocument()
+### Velveto.init()
+### Velveto.isBackable()
+### Velveto.refresh()
+### Velveto.setPathData()
+### Velveto.scrollTo()
+
+## Helpers - Session
+### Velveto.session.get()
+### Velveto.session.set()
+### Velveto.session.remove()
+
+## Helpers - Ajax
+### Velveto.ajax.abortAll()
+### Velveto.ajax.executeScript()
+### Velveto.ajax.GET()
+### Velveto.ajax.POST()
+### Velveto.ajax.sendRequest()
+### Velveto.ajax.xhr()
