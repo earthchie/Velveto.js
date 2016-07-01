@@ -83,12 +83,12 @@ my_website
 5. Put html in ``app/home.html`` and ``app/page1.html``
 
     ``app/home.html``
-    ```
+    ```html
 <h1>This is Home!</h1>
 ```
 
     ``app/page1.html``
-    ```
+    ```html
 <h1>This is Page #1!</h1>
 ```
 
@@ -97,7 +97,7 @@ my_website
     - same for page1.html ``http://localhost/my_website/#!/page1/``
 
     you can make a link to these pages like this too:
-    ```
+    ```html
 <a href="#!/home/">Home</a>
 <a href="#!/page1/">Page #1</a>
 ```
