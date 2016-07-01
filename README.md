@@ -81,6 +81,7 @@ my_website
 ```
 
 5. Put html in ``app/home.html`` and ``app/page1.html``
+
     ``app/home.html``
     ```
 <h1>This is Home!</h1>
