@@ -30,9 +30,70 @@ send me your idea! earthchie@gmail.com
 # Functions
 
 ### Velveto.back()
+
+if possible, go back to previous page.
+you can check if it can go back with ``Velveto.isBackable()``
+
 ### Velveto.clearHistory()
+clear browsing history. this will affect the behavior of ``Velveto.back()`` and ``Velveto.isBackable()``.
+
 ### Velveto.data()
+
+Accept: **url** *(String:optional)* 
+
+Return: **data** *(Object)* 
+
+Sample Usage: 
+```
+Velveto.data(); // read from current url
+Velveto.data(url); // read from given url
+```
+
+Description: parse current URL ``Velveto.data()`` or given URL ``Velveto.data('#!/blog/1-july-2016/')`` then return object of data. 
+
+For example:
+
+```
+http://mywebsite.com/#!/news/technology/programming/?id=1234&scrollTo=article
+```
+
+when you call ``Velveto.data()`` or ``Velveto.data('#!/news/technology/programming/?id=1234&scrollTo=article')`` it will return
+
+```
+{ 
+  "0": "technology", 
+  "1": "programming", 
+  "id": "1234", 
+  "scrollTo": "article"
+}
+```
+
+please note that key with number may be overridden by path values. E.g. URL ``Velveto.data('#!/blog/1-july-2016/?0=zero&1=one&2=two')`` will return
+
+```
+{
+    "0": "1-july-2016", 
+    "1": "one", 
+    "2": "two"
+}
+```
+Please use ``Velveto.getPathData()`` for more explicit data.
+
 ### Velveto.extend()
+
+Accept: **object1** *(Object or Array)*, **object2** *(Object or Array)* 
+
+Return **mergedObject**
+
+Sample Usage:
+
+```
+Velveto.extend({a:1,b:2},{b:3,c:4}); // return {a:1,b:3:c:4}
+```
+
+Description: merge two object together. like jQuery.extend().
+
+
 ### Velveto.fireEvent()
 ### Velveto.getBaseURL()
 ### Velveto.getPath()
