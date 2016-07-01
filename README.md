@@ -106,6 +106,47 @@ That's it. You have Single Page Application now! Good job!
 
 repeat step 4-6 as much as you like :)
 
+# Events
+
+When page changes, Velveto.js will fire multiple events in following order:
+
+1. unload - before page change
+2. beforeLoad - after injected loading animation
+3. beforeScriptLoad - after injected the DOM
+4. scriptLoaded - after every attached scripts is loaded and executed
+5. loaded - after document import successfully
+6. loadFail - in case of ajax fail, this event will fire after beforeLoad, all remaining events will not be fired.
+
+This is how you listen to the events:
+
+```javascript
+var container = document.getElementById('velveto');
+
+container.addEventListener('unload',function(){
+   console.log('unload - fired');
+});
+
+container.addEventListener('beforeLoad',function(){
+    console.log('beforeLoad - fired');
+});
+
+container.addEventListener('beforeScriptLoad',function(){
+    console.log('beforeScriptLoad - fired');
+});
+
+container.addEventListener('scriptLoaded',function(){
+    console.log('scriptLoaded - fired');
+});
+
+container.addEventListener('loaded',function(){
+    console.log('loaded - fired');
+});
+
+container.addEventListener('loadFail',function(){
+    console.log('loadFail - fired');
+});
+```
+
 # Functions
 
 ### Velveto.back()
@@ -340,7 +381,7 @@ Events: this function will fire multiple events in following orders
 3. beforeScriptLoad - before load additional scripts attached to document.
 4. scriptLoaded - right after every script loaded and executed.
 5. loaded - fire after document import successfully
-6. loadFail - in case of ajax fail, this event will fire after beforeScriptLoad, all remaining events will not be fired.
+6. loadFail - in case of ajax fail, this event will fire after beforeLoad, all remaining events will not be fired.
 
 This is how you listen to the events:
 
