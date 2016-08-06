@@ -511,3 +511,6 @@ This will attempt to scroll to element with id="comment-18".
 ### Velveto.ajax.POST()
 ### Velveto.ajax.sendRequest()
 ### Velveto.ajax.xhr()
+
+## License
+WTFPL 2.0 http://www.wtfpl.net/
