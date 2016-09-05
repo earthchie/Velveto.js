@@ -439,6 +439,7 @@ Velveto.iObject({a:{b:1}},'a.c',2); // {a:{b:1,c:2}}; assign mode
 Description: 
 
 has 3 modes
+
 1. clone - clone given object. requires obj only.
 2. access - get value of given keyset. requires obj, key.
 3. assign - assign value to given keyset.requires obj, key and val
@@ -500,6 +501,41 @@ Description: Scroll page to given element. You can also trigger this function by
 ``<a href="#comment-18">Scroll to Comment #18</a>``
 
 This will attempt to scroll to element with id="comment-18".
+
+### Velveto.template()
+
+Accept: **dom** *(String or DOM)*, **obj** *(Object)*
+
+Return: **String** if **dom** is *String*, **void** if **dom** is *DOM*
+
+Sample Usage:
+```html
+<article id="blog">
+    <h1>{{title}}</h1>
+    <hr>
+    {{content}}
+</article>
+```
+
+```javascript
+var blog = {
+    title: 'Hello World!',
+    content: 'Lorem Ipsum'
+};
+
+Velveto.template(document.getElementById('blog'),blog); // render to DOM directly
+
+var html = Velveto.template(
+            '<h1>{{title}}</h1>'+
+            '<hr>'+
+            '{{content}}'
+           , blog); // render to string
+           
+document.getElementById('blog').innerHTML = html;
+
+```
+
+Description: render data to given DOM
 
 ## Helpers - Session
 ### Velveto.session.get()
