@@ -1,29 +1,11 @@
-# Changelog 2.3.x (now is 2.3.1 on July 1, 2016.)
+# Changelog 2.4.x (now is 2.4.0 on Sep 5, 2016.)
 
-- now you have to init it by yourself, to let you add more options before initialization.``Velveto.init()``
-- add init options (these values are defaults)
-```javascript
-Velveto.init({
-    container_id: 'velveto', // ID of container that Velveto will put the content inside.
-    home: 'home', // default html file for homepage.
-    html_directory: 'app/', // path to html pages.
-    debug: false, // set to true to show console message to help you investigate the error.
-    loading_indicator: 'Loading...', // html that injected while page is loading.
-    history_max: 20 // max browsing history size
-});
-```
-- add ``Velveto.importDocument()``
-- add ``Velveto.data()``
-- ``Velveto.session`` is now try to store value in variable if localStorage is not presence
-- fix history bug, now browser's back button is working!
-- re-write ``Velveto.load()`` to make sure all external scripts will be loaded in order
-- remove unused code (mostly ajax functions. E.g. ``Velveto.ajax.HEAD()`` is now removed.)
-- rename ``Velveto.goTo()`` to ``Velveto.go()``. (still support ``Velveto.goTo()``)
-- Linted
+- add ``Velveto.iObject()`` intelligence object manipulation. With this function you can clone, access nested object, assign nested object very easily
+- add ``Velveto.template()`` simple data mapping template.
 
 # Plan
-- add **simple** template engine to help you bind variable to html strings
-- Add support for private mode in Safari on iOS 7+. This mode supported localStorage but trows: QuotaExceededError when localStorage.setItem() is call, we will use cookie instead if this case happen.
+- [x] add **simple** template engine to help you bind variable to html strings
+- [ ] Add support for private mode in Safari on iOS 7+. This mode supported localStorage but trows: QuotaExceededError when localStorage.setItem() is call, we will use cookie instead if this case happen.
 
 send me your idea! earthchie@gmail.com
 
@@ -440,6 +422,26 @@ Velveto.init({
 ```
 
 Description: For initializing Velveto.js Engine. Only need to call once, on document ready event.
+
+### Velveto.iObject()
+
+Accept: **obj** *(Object)*, **key** *(String:optional)*, **val** *(any:optional)*
+
+Return: **obj** *(Array)*
+
+Sample Usage:
+```javascript
+Velveto.iObject([1,2,3,4,5]); // clone mode
+Velveto.iObject([{name: 'John', address: ['address 1', 'address 2']}],'0.address[1]'); // "address 2"; access mode
+Velveto.iObject({a:{b:1}},'a.c',2); // {a:{b:1,c:2}}; assign mode
+```
+
+Description: 
+
+has 3 modes
+1. clone - clone given object. requires obj only.
+2. access - get value of given keyset. requires obj, key.
+3. assign - assign value to given keyset.requires obj, key and val
 
 ### Velveto.isBackable()
 
