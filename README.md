@@ -12,14 +12,16 @@ send me your idea! earthchie@gmail.com
 # Tutorial
 
 1. Prepare your working directory. Create folder name ``app`` and new text file name ``index.html``.
-    ```
+
+```
 my_website
  |_ app
  |_ index.html
-    ```
+```
 
 2. Download ``velveto.min.js`` from repo, and put it anywhere you like, for now I'll just put it alongside with index.html. Now our working directory should look like this:
-    ```
+
+```
 my_website
  |_ app
  |_ index.html
@@ -27,7 +29,8 @@ my_website
 ```
 
 3. Put this code inside ``index.html`` this will become our master template. Every page of your website will have this structure except content inside #velveto will change corresponding to URL.
-    ```html
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +56,8 @@ my_website
 ```
 
 4. Next, create our web pages ``app/home.html`` and ``app/page1.html``. So far, our working directory should look like this:
-    ```
+
+```
 my_website
  |_ app
     |_ home.html
@@ -64,22 +68,24 @@ my_website
 
 5. Put html in ``app/home.html`` and ``app/page1.html``
 
-    ``app/home.html``
-    ```html
+``app/home.html``
+  
+```html
 <h1>This is Home!</h1>
 ```
 
-    ``app/page1.html``
-    ```html
+``app/page1.html``
+
+```html
 <h1>This is Page #1!</h1>
 ```
-
 6. Open browser and navigate to your website. for example ``http://localhost/my_website/``
     - you can access home.html via ``http://localhost/my_website/#!/home/``
     - same for page1.html ``http://localhost/my_website/#!/page1/``
 
     you can make a link to these pages like this too:
-    ```html
+
+```html
 <a href="#!/home/">Home</a>
 <a href="#!/page1/">Page #1</a>
 ```
