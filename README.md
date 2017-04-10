@@ -1,6 +1,6 @@
-# Changelog 2.5.x (now is 2.5.0 on Apr 10, 2017.)
+# Changelog 2.5.x
 
-- no more eval(). Yay!
+- no more eval() so you can run it on Chrome Extension
 
 # Plan
 - [x] add **simple** template engine to help you bind variable to html strings
