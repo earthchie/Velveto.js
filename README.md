@@ -1,7 +1,6 @@
-# Changelog 2.4.x (now is 2.4.0 on Sep 5, 2016.)
+# Changelog 2.5.x (now is 2.5.0 on Apr 10, 2017.)
 
-- add ``Velveto.iObject()`` intelligence object manipulation. With this function you can clone, access nested object, assign nested object very easily
-- add ``Velveto.template()`` simple data mapping template.
+- no more eval(). Yay!
 
 # Plan
 - [x] add **simple** template engine to help you bind variable to html strings
